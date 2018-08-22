@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 
 Route::group(['prefix' => 'api/v1', 'middleware' => 'cors'], function() {
-    Route::get('/product/list', 'ProductController@getList');
+    Route::get('/products', 'ProductController@getList');
+    Route::get('/products/{id}/objects', 'ProductController@getProductObjects');
     Route::get('/object/{id}', 'ProductController@getObjectDetail');
     Route::put('/object/{id}', 'ProductController@updateObject');
     Route::post('/file/upload', 'PublicController@upload');

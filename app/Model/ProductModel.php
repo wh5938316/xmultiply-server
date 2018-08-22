@@ -15,4 +15,7 @@ class ProductModel extends Model
     
     protected $fillable = array('name');
 
+    public function objects() {
+    	return $this->hasMany(ObjectModel::class, 'product_id');
+    }
 }
